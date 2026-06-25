@@ -1,0 +1,22 @@
+{
+  "name": "@introspection-recipes/customer-support",
+  "version": "0.1.0",
+  "description": "Customer support recipe that triages Slack threads, searches Notion, drafts replies, and escalates sensitive requests.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "pi": {
+    "agents": [
+      "agents/*.yaml"
+    ],
+    "skills": [
+      "skills/**/SKILL.md"
+    ],
+    "extensions": [
+      "extensions/*.ts"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+name: responder
+from: agent
+description: Drafts customer replies grounded in approved knowledge base content.
+model:
+  name: anthropic/claude-sonnet-4-6
+  thinking_level: medium
+tools:
+  - read
+  - bash
+  - notion_search
+  - notion_get_page
+subagents: []
+skills:
+  - ticket-triage
+system_instructions:
+  mode: append
+  content: |
+    Search approved documentation, cite the relevant KB pages by title, and draft a concise reply. Do not invent product behavior or policy.

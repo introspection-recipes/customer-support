@@ -1,0 +1,24 @@
+name: agent
+description: Support orchestrator, classify requests, retrieve KB answers, draft replies.
+model:
+  name: anthropic/claude-sonnet-4-6
+  thinking_level: medium
+tools:
+  - read
+  - bash
+  - slack_list_threads
+  - slack_post_message
+  - notion_search
+  - notion_get_page
+subagents:
+  - triage
+  - responder
+  - escalation
+skills:
+  - ticket-triage
+system_instructions:
+  mode: append
+  content: |
+    # Role: Support lead
+
+    Read the customer thread, search Notion for approved answers, draft a reply, escalate billing and security issues to a human.
