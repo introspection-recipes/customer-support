@@ -67,7 +67,7 @@ const extension: ExtensionFactory = (pi: ExtensionAPI) => {
         method: "POST",
         headers: {
           Authorization: `Bearer ${required("NOTION_TOKEN")}`,
-          "Notion-Version": process.env.NOTION_VERSION || "2022-06-28",
+          "Notion-Version": process.env.NOTION_VERSION || "2026-03-11",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ query: params.query, page_size: params.page_size ?? 10 }),
@@ -84,7 +84,7 @@ const extension: ExtensionFactory = (pi: ExtensionAPI) => {
     async execute(_id, params) {
       const headers = {
         Authorization: `Bearer ${required("NOTION_TOKEN")}`,
-        "Notion-Version": process.env.NOTION_VERSION || "2022-06-28",
+        "Notion-Version": process.env.NOTION_VERSION || "2026-03-11",
       };
       const page = await jsonRequest(`https://api.notion.com/v1/pages/${encodeURIComponent(params.page_id)}`, { headers });
       const blocks = await jsonRequest(`https://api.notion.com/v1/blocks/${encodeURIComponent(params.page_id)}/children?page_size=50`, { headers });
