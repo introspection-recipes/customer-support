@@ -4,10 +4,6 @@
   "description": "Customer support recipe that triages Slack threads, searches Notion, drafts replies, and escalates sensitive requests.",
   "type": "module",
   "license": "Apache-2.0",
-  "peerDependencies": {
-    "@earendil-works/pi-coding-agent": "*",
-    "typebox": "*"
-  },
   "pi": {
     "agents": [
       "agents/*.yaml"
@@ -15,8 +11,30 @@
     "skills": [
       "skills/**/SKILL.md"
     ],
-    "extensions": [
-      "extensions/*.ts"
-    ]
+    "mcp": {
+      "servers": [
+        {
+          "id": "slack",
+          "required": false,
+          "tools": {
+            "allow": [
+              "slack_read_channel",
+              "slack_read_thread",
+              "slack_send_message_draft"
+            ]
+          }
+        },
+        {
+          "id": "notion",
+          "required": false,
+          "tools": {
+            "allow": [
+              "API-post-search",
+              "API-retrieve-page-markdown"
+            ]
+          }
+        }
+      ]
+    }
   }
 }
