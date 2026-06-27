@@ -7,7 +7,7 @@ model:
 tools:
   - read
   - bash
-  - slack_post_message
+  - mcp:slack/slack_send_message_draft
 subagents: []
 skills:
   - ticket-triage

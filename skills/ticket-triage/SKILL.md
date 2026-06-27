@@ -1,3 +1,7 @@
+---
+description: Use for support threads, ticket triage, customer reply drafting, and escalation notes.
+---
+
 # Ticket Triage
 
 Use this skill for support threads, tickets, and customer escalation drafts.
