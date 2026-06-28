@@ -3,3 +3,4 @@ node_modules/
 .pi/mcp.local.json
 .DS_Store
 dist/
+.env.*
