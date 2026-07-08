@@ -4,6 +4,14 @@
   "description": "Customer support recipe that triages Slack threads, searches Notion, drafts replies, and escalates sensitive requests.",
   "type": "module",
   "license": "Apache-2.0",
+  "scripts": {
+    "check": "recipes check . --profile ci",
+    "check:json": "recipes check . --profile ci --json",
+    "prepare": "git config core.hooksPath .githooks || true"
+  },
+  "devDependencies": {
+    "@introspection-ai/pi-recipes": "^0.2.0"
+  },
   "pi": {
     "agents": [
       "agents/*.yaml"
