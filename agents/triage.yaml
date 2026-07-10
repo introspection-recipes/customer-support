@@ -7,8 +7,11 @@ model:
 tools:
   - read
   - bash
-  - mcp:slack/slack_read_channel
-  - mcp:slack/slack_read_thread
+mcp:
+  slack:
+    include:
+      - slack_read_channel
+      - slack_read_thread
 subagents: []
 skills:
   - ticket-triage
