@@ -7,8 +7,11 @@ model:
 tools:
   - read
   - bash
-  - mcp:notion/API-post-search
-  - mcp:notion/API-retrieve-page-markdown
+mcp:
+  notion:
+    include:
+      - API-post-search
+      - API-retrieve-page-markdown
 subagents: []
 skills:
   - ticket-triage
