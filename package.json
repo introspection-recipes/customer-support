@@ -5,12 +5,9 @@
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
-    "check": "recipes check . --profile ci",
-    "check:json": "recipes check . --profile ci --json",
+    "check": "npx -y -p @introspection-ai/pi-recipes@latest recipes check . --profile ci",
+    "check:json": "npx -y -p @introspection-ai/pi-recipes@latest recipes check . --profile ci --json",
     "prepare": "git config core.hooksPath .githooks || true"
-  },
-  "devDependencies": {
-    "@introspection-ai/pi-recipes": "^0.6.0"
   },
   "pi": {
     "agents": [
