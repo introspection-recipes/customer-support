@@ -53,3 +53,17 @@ no global `mcp` binary is required.
 The Slack MCP server should expose `slack_read_channel`, `slack_read_thread`,
 and `slack_send_message_draft`. The Notion MCP server should expose
 `API-post-search` and `API-retrieve-page-markdown`.
+
+## Validating Locally
+
+CI validates every push with [`pi-recipes-action`](https://github.com/introspection-org/pi-recipes-action). To run the same check before each commit, enable the bundled pre-commit hook once after cloning:
+
+```bash
+git config core.hooksPath .githooks   # or: npm install
+```
+
+Or run the check directly at any time:
+
+```bash
+npx -y -p @introspection-ai/pi-recipes@latest recipes check . --profile ci
+```
